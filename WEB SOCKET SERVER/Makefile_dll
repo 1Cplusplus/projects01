@@ -1,0 +1,20 @@
+EXE_NAME=WEB SOCKET SERVER
+CPU=32
+LIBS=./LIBS
+SRC=./src
+BIN=./bin
+OPS= -lws2_32 $(BIN)/$(CPU)/sha1.dll $(BIN)/$(CPU)/b64.dll -std=c++17 -Os -DDLL_ON $(BIN)/regex2.dll -m$(CPU)
+
+$(BIN)/$(CPU)/$(EXE_NAME)_dll.exe:$(BIN)/$(CPU)/b64.dll $(BIN)/$(CPU)/sha1.dll 
+	g++ "$(SRC)/$(EXE_NAME).cpp" -o "$(BIN)/$(CPU)/$(EXE_NAME)_dll.exe" $(OPS)
+$(BIN)/$(CPU)/b64.dll:$(LIBS)/$(CPU)/libb64.a
+	g++ -shared $(LIBS)/$(CPU)/libb64.a -o $(BIN)/$(CPU)/b64.dll -Os -m$(CPU)
+$(LIBS)/$(CPU)/libb64.a:./b64/b64.c
+	g++ -c $(SRC)/b64/b64.c -o $(LIBS)/$(CPU)/libb64.a -DCREAR_B64_DLL -Os -DDLL_ON -m$(CPU)
+$(BIN)/$(CPU)/sha1.dll:$(LIBS)/$(CPU)/libsha1.a
+	g++  -shared  $(LIBS)/$(CPU)/libsha1.a -o $(BIN)/$(CPU)/sha1.dll -Os -m$(CPU)
+$(LIBS)/$(CPU)/libsha1.a:./sha1/sha1.cpp
+	g++ -c $(SRC)/sha1/sha1.cpp -o $(LIBS)/$(CPU)/libsha1.a -DCREAR_SHA1_DLL -Os -DDLL_ON -m$(CPU)
+
+	
+	

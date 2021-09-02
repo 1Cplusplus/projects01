@@ -1,0 +1,15 @@
+APP_NAME= WEB\ SOCKET\ SERVER
+CPU= 32
+SRC= ./src
+BIN= ./bin
+LIBS= ./LIBS/$(CPU)
+OPS= -lws2_32 -L$(LIBS) -lsha1 -lb64 -lweb_sock_class -std=c++17 $(BIN)/regex2.dll -DNO_DLL -O2 -m$(CPU)
+
+$(APP_NAME)_GNU.exe: $(LIBS)/libsha1.a $(LIBS)/libb64.a $(LIBS)/libweb_sock_class.a $(SRC)/$(APP_NAME).cpp 
+	g++  $(SRC)/$(APP_NAME).cpp $(OPS) -o $(BIN)/$(CPU)/$(APP_NAME)_GNU.exe
+$(LIBS)/libweb_sock_class.a: $(SRC)/web_sock_class.cpp
+	g++ -c $(SRC)/web_sock_class.cpp -o $(LIBS)/libweb_sock_class.a -Os -DNO_DLL -m$(CPU) -lws2_32
+$(LIBS)/libb64.a: $(SRC)/b64/b64.c 
+	g++ -c $(SRC)/b64/b64.c -o $(LIBS)/libb64.a -Os -DNO_DLL -m$(CPU)
+$(LIBS)/libsha1.a: $(SRC)/sha1/sha1.cpp 
+	g++ -c $(SRC)/sha1/sha1.cpp -o $(LIBS)/libsha1.a -Os -DNO_DLL -m$(CPU)
