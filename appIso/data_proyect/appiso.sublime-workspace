@@ -1,0 +1,1047 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"st",
+				"stderr"
+			],
+			[
+				"iso",
+				"iso_joliet"
+			],
+			[
+				"ui",
+				"uint8_t"
+			],
+			[
+				"lb",
+				"lba_root"
+			],
+			[
+				"lba",
+				"lba_root"
+			],
+			[
+				"is",
+				"isDir"
+			],
+			[
+				"ar",
+				"argv"
+			],
+			[
+				"str",
+				"strcmp"
+			],
+			[
+				"le",
+				"lenIdFiles"
+			],
+			[
+				"fil",
+				"filesName"
+			],
+			[
+				"cou",
+				"count_records"
+			],
+			[
+				"co",
+				"count_records"
+			],
+			[
+				"len",
+				"lenIdDirs"
+			],
+			[
+				"fi",
+				"filesName"
+			],
+			[
+				"blo",
+				"BLOCK_SIZE"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"sv",
+				"svd_p"
+			],
+			[
+				"dr_",
+				"dr_len_file_id"
+			],
+			[
+				"dir_re",
+				"dir_record_p"
+			],
+			[
+				"dir",
+				"dr_len_file_id"
+			],
+			[
+				"w",
+				"wchar_t"
+			],
+			[
+				"e",
+				"else"
+			],
+			[
+				"del",
+				"delete"
+			],
+			[
+				"p",
+				"p32"
+			],
+			[
+				"arg",
+				"argv"
+			],
+			[
+				"margi",
+				"margin-top\tproperty"
+			],
+			[
+				"pri",
+				"printf"
+			],
+			[
+				"rgb",
+				"rgba()\tbackground"
+			],
+			[
+				"bord",
+				"border-radius\tproperty"
+			],
+			[
+				"ba",
+				"background-color\tproperty"
+			],
+			[
+				"mar",
+				"margin-top\tproperty"
+			],
+			[
+				"iso_",
+				"iso_joliet"
+			],
+			[
+				"IS",
+				"ISO_DESC_PARTITION"
+			],
+			[
+				"I",
+				"ISO_DESC_SUPPLEMENTARY"
+			],
+			[
+				"dir_r",
+				"dir_record"
+			],
+			[
+				"uin",
+				"uint32_t"
+			],
+			[
+				"dr_f",
+				"dr_file_flag"
+			],
+			[
+				"dr",
+				"dr_len_file_id"
+			],
+			[
+				"pvd",
+				"pvd_root_dir"
+			],
+			[
+				"data",
+				"data_area"
+			],
+			[
+				"dat",
+				"data_area_len"
+			],
+			[
+				"vol",
+				"vol_data_area"
+			],
+			[
+				"vo",
+				"vol_data_area"
+			],
+			[
+				"svd_",
+				"svd_vdt"
+			],
+			[
+				"un",
+				"uint8_t"
+			],
+			[
+				"cstdi",
+				"cstdint\tstandard header (since c++11)"
+			],
+			[
+				"ctyp",
+				"cctype\tstandard header"
+			],
+			[
+				"da",
+				"data_area_len"
+			],
+			[
+				"dr_l",
+				"dr_len_dir_record"
+			],
+			[
+				"de",
+				"ISO_DESC_SIZE"
+			],
+			[
+				"pr",
+				"printf\tprintf …"
+			],
+			[
+				"def",
+				"def\t#ifndef … #define … #endif"
+			],
+			[
+				"ISO",
+				"ISO_DESC_SIZE"
+			],
+			[
+				"s",
+				"supplementary_vol_desc"
+			],
+			[
+				"pvd_add",
+				"pvd_addr_L_path_table"
+			],
+			[
+				"pvd_ad",
+				"pvd_addr_L_path_table"
+			],
+			[
+				"pvd_pat",
+				"pvd_path_table_size"
+			],
+			[
+				"pvd_",
+				"pvd_p"
+			],
+			[
+				"dr_le",
+				"dr_file_id"
+			],
+			[
+				"dr_fi",
+				"dr_len_file_id"
+			],
+			[
+				"app",
+				"pvd_app_id"
+			],
+			[
+				"pv",
+				"pvd_p"
+			],
+			[
+				"dr_fil",
+				"dr_file_id"
+			],
+			[
+				"dir_",
+				"dir_record_p"
+			],
+			[
+				"pvd_r",
+				"pvd_root_dir"
+			],
+			[
+				"in",
+				"int"
+			],
+			[
+				"pvd_vol",
+				"pvd_vol_space_size"
+			],
+			[
+				"pvd_vo",
+				"pvd_vol_space_size"
+			],
+			[
+				"b",
+				"buff"
+			],
+			[
+				"ll",
+				"ll2"
+			],
+			[
+				"0x7c",
+				"0x7c00"
+			],
+			[
+				"mo",
+				"movb"
+			],
+			[
+				"mov",
+				"movb"
+			],
+			[
+				"int",
+				"INT"
+			],
+			[
+				"0x8",
+				"0x800"
+			],
+			[
+				"0x1",
+				"0x10"
+			],
+			[
+				"f",
+				"fin"
+			],
+			[
+				"0x5",
+				"0x500"
+			],
+			[
+				"0x",
+				"0x7c00"
+			],
+			[
+				"a",
+				"al"
+			],
+			[
+				"c",
+				"cs_r"
+			],
+			[
+				"ad",
+				"addr_binary"
+			],
+			[
+				"l",
+				"len_bin"
+			],
+			[
+				"strin",
+				"string.h\tstandard header (deprecated)"
+			],
+			[
+				"stdio",
+				"cstdio\tstandard header"
+			],
+			[
+				"i",
+				"inc\t#include <…>"
+			],
+			[
+				"li",
+				"loginPage"
+			],
+			[
+				"ele",
+				"elect_app"
+			],
+			[
+				"el",
+				"elect_app"
+			],
+			[
+				"pa",
+				"path"
+			],
+			[
+				"fo",
+				"form"
+			],
+			[
+				"ma",
+				"main\tmain()"
+			],
+			[
+				"add",
+				"_addr_"
+			],
+			[
+				"SO",
+				"SOCK_STREAM"
+			],
+			[
+				"addri",
+				"addri"
+			],
+			[
+				"addrin",
+				"addrinfo"
+			],
+			[
+				"in_",
+				"inet_addr"
+			],
+			[
+				"W",
+				"WSAGetLastError"
+			],
+			[
+				"hr",
+				"hr_p"
+			],
+			[
+				"h",
+				"hr"
+			],
+			[
+				"sd",
+				"saddr"
+			],
+			[
+				"sa",
+				"sa_data"
+			],
+			[
+				"addr",
+				"addr_p"
+			],
+			[
+				"__",
+				"__addr___"
+			],
+			[
+				"pad",
+				"p_addr2"
+			],
+			[
+				"_",
+				"_ip__"
+			],
+			[
+				"sr",
+				"str"
+			],
+			[
+				"sa_",
+				"sa_data"
+			],
+			[
+				"sin",
+				"sin_addr"
+			],
+			[
+				"Dia",
+				"DiasDelMes"
+			],
+			[
+				"te",
+				"textContent"
+			],
+			[
+				"Do",
+				"DOMINGO"
+			],
+			[
+				"fon",
+				"font-family\tproperty"
+			],
+			[
+				"borde",
+				"border-spacing\tproperty"
+			],
+			[
+				"cla",
+				"classList"
+			],
+			[
+				"dia",
+				"DiasDelMes"
+			],
+			[
+				"set",
+				"setAttribute"
+			],
+			[
+				"FON",
+				"font-style\tproperty"
+			],
+			[
+				"aa",
+				"aaaa"
+			],
+			[
+				"aaa",
+				"aaa"
+			],
+			[
+				"text",
+				"textContent"
+			],
+			[
+				"tr",
+				"tr_extra"
+			],
+			[
+				"ca",
+				"cal"
+			],
+			[
+				"dias",
+				"dias"
+			],
+			[
+				"th",
+				"Thu"
+			],
+			[
+				"su",
+				"Sun"
+			],
+			[
+				"for",
+				"for\tfor (…) {…}"
+			],
+			[
+				"ge",
+				"getElementById"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/C/Users/binary/Documents/c++/appIso/main/src/appIso.cpp",
+			"settings":
+			{
+				"buffer_size": 1850,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			},
+			"undo_stack":
+			[
+			]
+		},
+		{
+			"file": "/C/Users/binary/Documents/c++/appIso/main/inc/appiso.h",
+			"settings":
+			{
+				"buffer_size": 156,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/binary/Documents/c++/appIso/formats/joliet/inc/joliet.h",
+			"settings":
+			{
+				"buffer_size": 4081,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "joliet.h"
+			}
+		},
+		{
+			"file": "/C/Users/binary/Documents/c++/appIso/inc/iso.h",
+			"settings":
+			{
+				"buffer_size": 869,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/binary/Documents/c++/appIso/makefile",
+			"settings":
+			{
+				"buffer_size": 289,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "makefile"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: re",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: r",
+				"Package Control: Remove Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Install Package",
+				"Package Control: Install Package"
+			],
+			[
+				"Install Package Control",
+				"Install Package Control"
+			],
+			[
+				"",
+				"UI: Select Theme"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/binary/Documents/c++/appIso"
+	],
+	"file_history":
+	[
+		"/C/Users/binary/Documents/c++/appIso/formats/joliet/src/joliet.cpp",
+		"/C/Users/binary/Desktop/DGII_RNC.TXT",
+		"/C/Users/binary/AppData/Local/Temp/Rar$DRa0.977/TMP/DGII_RNC.TXT",
+		"/C/Users/binary/Documents/c++/appIso/out/json.txt",
+		"/C/Users/binary/Documents/c++/appIso/formats/joliet/joliet.cpp",
+		"/C/Users/binary/Documents/c++/appIso/inc/appiso.h",
+		"/C/Users/binary/Documents/c++/appIso/main/appIso.cpp",
+		"/C/Users/binary/Documents/c++/appIso/data_proyect/appiso.sublime-project",
+		"/C/Users/binary/Documents/c++/appIso/src/appIso.cpp",
+		"/C/Users/binary/Documents/c++/appIso/out/json",
+		"/C/wamp64/www/easymoney/index.html",
+		"/C/wamp64/www/easymoney/css/main.css",
+		"/C/wamp64/www/easymoney/js/main.js",
+		"/C/wamp64/www/easymoney/hostname",
+		"/C/wamp64/www/easymoney/p2/p2.php",
+		"/C/Users/binary/AppData/Local/Temp/Rar$DRa0.577/TMP/DGII_RNC.TXT",
+		"/C/wamp64/bin/apache/apache2.4.46/conf/extra/httpd-vhosts.conf",
+		"/C/wamp64/bin/apache/apache2.4.46/conf/httpd.conf",
+		"/C/Users/binary/Documents/TOR/Tor Browser/Browser/TorBrowser/Data/Tor/torrc",
+		"/C/Users/binary/Documents/c++/appIso/rc/appIso.cpp",
+		"/C/Users/binary/Documents/c++/appIso/appIso.cpp",
+		"/C/Users/binary/Documents/ASM/#.s",
+		"/C/Users/binary/Documents/ASM/numToText.s",
+		"/C/Users/binary/Documents/ASM/asm.s",
+		"/C/Users/binary/Documents/ASM/asm.img",
+		"/C/Users/binary/Documents/ASM/mc.s",
+		"/C/Users/binary/Documents/c++/test/tesst.cpp",
+		"/C/Users/binary/Documents/c++/test/test.s",
+		"/C/Users/binary/Desktop/asm.img",
+		"/C/Users/binary/Documents/ASM/asm",
+		"/C/Users/binary/Desktop/asm",
+		"/E/M-VB/debian/debian_1.vdi",
+		"/C/Users/binary/VirtualBox VMs/debian/uefi.vdi",
+		"/C/Users/binary/Documents/c++/test/Nuevo documento de texto.txt",
+		"/C/Users/binary/Documents/elect_app/package.json",
+		"/C/Users/binary/Documents/elect_app/html/elect_app.html",
+		"/C/Users/binary/Documents/elect_app/js/page.js",
+		"/C/Users/binary/Documents/elect_app/css/elect_app.css",
+		"/C/Users/binary/Documents/elect_app/js/elect_app.js",
+		"/C/Users/binary/Documents/elect_app/appMain.js",
+		"/C/Users/binary/Documents/elect_app/elect_app.html",
+		"/C/Users/binary/Documents/elect_app/re.html",
+		"/C/Users/binary/Documents/elect_app/node_modules/re.html",
+		"/C/usb.vmdk",
+		"/C/Users/binary/Documents/c++/s.cpp",
+		"/C/Users/binary/Documents/c++/c.cpp",
+		"/C/Users/binary/Documents/python/cliente.py",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/wamp64/www/www.a.com/index.php",
+		"/C/wamp/www/www.a.com/index.php",
+		"/C/wamp64/www/php.php",
+		"/C/wamp64/bin/apache/apache2.4.46/conf/extra/httpd-autoindex.conf",
+		"/C/wamp64/bin/apache/apache2.4.46/conf/extra/httpd-dav.conf",
+		"/C/wamp64/bin/apache/apache2.4.46/conf/extra/httpd-userdir.conf",
+		"/C/wamp64/bin/apache/apache2.4.46/conf/extra/httpd-default.conf",
+		"/C/wamp64/bin/apache/apache2.4.46/conf/extra/httpd-manual.conf",
+		"/C/Users/binary/Documents/python/sever.py",
+		"/C/Users/binary/Desktop/nginx-1.18.0/html/php.php",
+		"/C/Users/binary/Desktop/nginx-1.18.0/conf/nginx.conf",
+		"/C/Users/binary/Desktop/nginx-1.18.0/logs/error.log",
+		"/C/Users/binary/Desktop/321.cpp",
+		"/C/Users/binary/Desktop/EXT/css/ncprod.css",
+		"/C/Users/binary/Desktop/EXT/css/satsweb.css",
+		"/C/Users/binary/Desktop/EXT/css/sacsweb.css",
+		"/C/Users/binary/Desktop/EXT/css/iptvmanager.css",
+		"/C/Users/binary/Desktop/EXT/css/kunai.css",
+		"/C/Users/binary/Desktop/EXT/css/intranet2.css",
+		"/C/Users/binary/Desktop/EXT/css/sms.css",
+		"/C/Users/binary/Desktop/nginx-1.18.0/html/test.html",
+		"/C/Users/binary/Desktop/EXT/js/iptvmanager.js",
+		"/C/Users/binary/Desktop/EXT/js/satsweb.js",
+		"/C/Users/binary/Desktop/EXT/js/ncprod.js",
+		"/C/Users/binary/Desktop/EXT/js/intranet2.js",
+		"/C/Users/binary/Desktop/EXT/js/kunai.js",
+		"/C/Users/binary/Desktop/EXT/js/js.js",
+		"/C/Users/binary/Desktop/EXT/html/HW.html",
+		"/C/Users/binary/Desktop/EXT/manifest.json",
+		"/C/Users/binary/Desktop/WEB SOCKET SERVER/include/WEB SOCKET SERVER.h",
+		"/C/Users/binary/Desktop/WEB SOCKET SERVER/src/WEB SOCKET SERVER.CPP",
+		"/C/Users/binary/Desktop/test.html",
+		"/C/Users/binary/Desktop/EXT/js/js3.js",
+		"/C/Users/binary/Desktop/EXT/js/js2.js",
+		"/C/Users/binary/Desktop/EXT/css/css.css",
+		"/C/Users/binary/Desktop/nginx-1.18.0/conf/koi-win",
+		"/C/Users/binary/Desktop/nginx-1.18.0/conf/fastcgi.conf",
+		"/C/Users/binary/Desktop/nginx-1.18.0/conf/mime.types",
+		"/C/Users/binary/Desktop/nginx-1.18.0/contrib/geo2nginx.pl",
+		"/C/Users/binary/Desktop/EXT/HW.json",
+		"/C/Users/binary/ASM/asm.s",
+		"//DESKTOP-DSNBASJ/Users/binary/ASM/c++/c.cpp",
+		"/C/Program Files (x86)/Cisco/Cisco AnyConnect Secure Mobility Client/UpdateComponentManifest.json",
+		"/C/Users/binary/Documents/c++/f.txt",
+		"/C/Users/binary/Desktop/ld.txt",
+		"/C/Users/binary/asm.s",
+		"/D/Agencia de viaje/estilo.css",
+		"/C/cygwin64/home/binary/asm.s",
+		"/D/Agencia de viaje/index.html",
+		"/C/Users/binary/Desktop/proyecto/prueba.html",
+		"/C/Users/binary/Desktop/proyecto/css/estilos.css",
+		"/C/Users/binary/Desktop/proyecto/index.html",
+		"/C/Users/binary/Desktop/WEB SOCKET SERVER/Makefile_dll",
+		"/C/Users/binary/Desktop/WEB SOCKET SERVER/Makefile_gnu",
+		"/C/Users/binary/Desktop/WEB SOCKET SERVER/Makefile",
+		"/C/Users/binary/Desktop/WEB SOCKET SERVER/include/b64.h",
+		"/C/Users/binary/Desktop/WEB SOCKET SERVER/include/sha1.h",
+		"/C/Users/binary/Desktop/WEB SOCKET SERVER/sc.bat",
+		"/C/Users/binary/Desktop/WEB SOCKET SERVER/b64/b64.c"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 128.0,
+		"where_history":
+		[
+			"<current file>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"comercial importadora ",
+			"comercial importadora",
+			"auto import",
+			"comercial espinal",
+			"ant",
+			"an",
+			"gre",
+			"uint8_t",
+			"unsigned char",
+			"b4",
+			"bf",
+			"e8",
+			"b4"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"unsigned char",
+			"uint8_t"
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/Users/binary/Documents/c++/appIso/main/src/appIso.cpp",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1850,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								257,
+								257
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/binary/Documents/c++/appIso/main/inc/appiso.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 156,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12,
+								12
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/binary/Documents/c++/appIso/formats/joliet/inc/joliet.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4081,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3104,
+								3104
+							]
+						],
+						"settings":
+						{
+							"auto_name": "joliet.h",
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/binary/Documents/c++/appIso/inc/iso.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 869,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								327,
+								327
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/binary/Documents/c++/appIso/makefile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 289,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								289,
+								289
+							]
+						],
+						"settings":
+						{
+							"auto_name": "makefile",
+							"syntax": "Packages/Makefile/Makefile.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 35.0
+	},
+	"input":
+	{
+		"height": 47.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 186.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "appiso.sublime-project",
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Users\\binary\\Documents\\elect_app\\data proyect\\elect_app.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 37.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 592.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 123.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 2
+	}
+}
