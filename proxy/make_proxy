@@ -1,0 +1,10 @@
+
+
+
+# 									UNIX
+main:./src/main.cpp
+	g++ ./src/main.cpp -o ./bin/proxy -lpthread
+	
+# 									WINDOWS
+# main:./src/main.cpp
+# 	g++ ./src/main.cpp -o ./bin/proxy.exe -lws2_32 

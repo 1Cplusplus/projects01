@@ -1,0 +1,4 @@
+
+
+ftp:./src/main.cpp ./src/ftp.cpp
+	g++ ./src/main.cpp -o ./bin/fapp -lpthread
