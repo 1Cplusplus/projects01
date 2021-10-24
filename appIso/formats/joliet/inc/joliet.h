@@ -16,9 +16,9 @@
 struct vol{
 	//uint8_t vol_sys_area [16*2048];
 	uint8_t* vol_data_area[1];
-}*vol_sapce_;
+}*desc_file_;
 
- struct dir_record{
+struct dir_record{
 	uint8_t dr_len_dir_record;
 	uint8_t dr_extended_attr_record_len;
 	uint8_t dr_LBA_extent[8];
@@ -38,7 +38,7 @@ extern struct fin_vol_desc{
 	uint8_t	fvd_version;
 	uint8_t fvd_rsv[2041];
 }*fvd_p;
- struct primary_vol_desc{
+struct primary_vol_desc{
 	uint8_t pvd_vdt;
 	uint8_t pvd_stdId[5];
 	uint8_t	pvd_version;
@@ -73,7 +73,8 @@ extern struct fin_vol_desc{
 	uint8_t pvd_app_used[512];
 	uint8_t pvd_rsv[653];
 }*pvd_p;
- struct supplementary_vol_desc{
+
+struct supplementary_vol_desc{
 	uint8_t svd_vdt;
 	uint8_t svd_stdId[5];
 	uint8_t	svd_version;
