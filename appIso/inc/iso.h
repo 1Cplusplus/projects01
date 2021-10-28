@@ -1,6 +1,7 @@
 #include <cstdint>
 #include <cstdio>
 #include <string.h>
+#include <windows.h>
 
 #ifndef ISO_H
 #define ISO_H
@@ -10,7 +11,7 @@
 #define ISO_DESC_SUPPLEMENTARY 	2u
 #define ISO_DESC_PARTITION 			3u
 #define ISO_DESC_TERMINATOR 		255u
-#define ISO_BLOCK_SIZE 					2048u
+#define ISO_BLOCK_SIZE 					2048lu
 #define ISO_VOL_SYS_AREA_SIZE 	2048*16u
 
 struct vol{
@@ -32,6 +33,13 @@ struct dir_record{
 	uint8_t dr_file_id[1];
 	
 }*dir_record_p;
+struct path_table{
+	uint8_t pt_len_dir_id;
+	uint8_t pt_ext_attr_record_len;
+	uint8_t pt_lba_exten[4];
+	uint8_t pt_parent_dir_id[2];
+	uint8_t pt_dir_id[1];
+};
 struct fin_vol_desc{
 	uint8_t fvd_vdt;// Volume Descriptor Type
 	uint8_t fvd_stdId[5];
@@ -57,7 +65,7 @@ struct primary_vol_desc{
 	uint8_t pvd_sys_id[32];
 	uint8_t pvd_vol_id[32];
 	uint8_t pvd_unused_2[8];
-	uint8_t pvd_vol_space_size[8];
+	uint8_t pvd_vol_space_size[8];// numeros de blockes logicos que ocupa el volumen
 	uint8_t pvd_unused_3[32];
 	uint8_t pvd_vol_set_size[4];
 	uint8_t pvd_vol_secu_number[4];
@@ -127,20 +135,22 @@ struct attr_files{
   	uint32_t 	af_size;
   	uint8_t		af_is_dir;
 }; 
- 
-uint8_t lba_primary_vol = 16, lba_partition_vol = 0,
-			  lba_supplementary_vol = 0, lba_terminator_vol = 0, lba_boot_vol = 17;
+
 uint8_t*typeIso; 
-uint8_t lba_parent;
+uint8_t lba_parent=0;
 FILE*iso_file;  
 
+
+void make_iso();
+
 uint8_t iso_boot();
-char iso_joliet(const uint32_t&lba ,const uint32_t&size ,const uint8_t&isDir );   
+char iso_joliet(const uint32_t&lba ,const uint32_t&size ,const uint8_t&isDir, uint8_t*  );   
 char show_dir(const uint8_t* );
+void read_file(uint8_t*, uint32_t&, const char* );
+uint8_t* load_descriptors( uint8_t&/*, uint8_t**/);
 
 	//	SE UTILIZA PARA CREAR LA METADATA Y ENVIARLA JUNTO CON LOS DATOS
 char createJson(uint8_t*filesName[], uint8_t*lenIdFiles, uint32_t *lba[],uint8_t*type_file, uint8_t&count_records){
-
 	fprintf(stdout, "{" );
 
 	fprintf(stdout, "\"parent\":{" );
@@ -154,7 +164,7 @@ char createJson(uint8_t*filesName[], uint8_t*lenIdFiles, uint32_t *lba[],uint8_t
 	fprintf(stdout,",\"lba\":%u,\"typeIso\":\"%s\"}",lba_parent, typeIso );
 	for (int i = 0; i < count_records; ++i){
 		fwrite(filesName[i], 1, lenIdFiles[i], stdout);
-		printf(" LBA %u\n ",*lba[ i ] );
+		// printf(" LBA %u\n ",*lba[ i ] );
 		// printf("\n");
 	}
 	return 0;
@@ -167,7 +177,7 @@ char createJson(uint8_t*filesName[], uint8_t*lenIdFiles, uint32_t *lba[],uint8_t
  //  primary_vol_desc *pvd_p;
 
 
- bool joliet;
+ bool is_boot = 0;
 
 // char iso_joliet(const uint32_t&lba_ = 0,const uint32_t&size_ = 0,const uint8_t&isDir_ = 0);
 // char show_dir(const uint8_t* );
