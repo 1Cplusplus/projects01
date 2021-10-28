@@ -1,22 +1,21 @@
 
-char iso_joliet(const uint32_t&lba = 0, const uint32_t&size = 0, const uint8_t&isDir = 0 ){
+char iso_joliet(const uint32_t&lba = 0, const uint32_t&size = 0, const uint8_t&isDir = 0, const char* fileName="" ){
 	// printf("iso_joliet\n"); 
+	// printf("svd_addr_L_path_table %u\n", *(uint32_t*)svd_p->svd_addr_L_path_table );
 
-	typeIso 			= new uint8_t[strlen("iso_joliet")];
+	typeIso = new uint8_t[strlen("iso_joliet")];
 	strcpy( (char*)typeIso, "iso_joliet" );
 	uint32_t 	pos 			 = 0;// DIRECCION LBA DEL DIRECTORIO AL CUAL SE QUIERE ACCEDER
 	uint16_t* BLOCK_SIZE = (uint16_t*)svd_p->svd_logical_block_size; 
 /*/
  *	VOL_SPACE_SIZE: Tamaño del volumen en bloques de 2048 byte;
 /*/
-	uint32_t *vol_space_size = (uint32_t*) svd_p->svd_vol_space_size; 
-						dir_record_p   = ( dir_record* )svd_p->svd_root_dir;
-	uint32_t*	addr_root			 = (uint32_t*)dir_record_p->dr_LBA_extent;
+	uint32_t* vol_space_size = ( uint32_t*   ) svd_p->svd_vol_space_size; 
+						dir_record_p   = ( dir_record* ) svd_p->svd_root_dir;
+	uint32_t*	addr_root			 = ( uint32_t*   ) dir_record_p->dr_LBA_extent;
 	
-		pos = lba_parent = *addr_root;
-	if (lba != 0){
-		pos = lba_parent = lba;
-	}
+								pos = lba_parent = *addr_root;
+	if (lba != 0)	pos = lba_parent = lba;
 	 
 	uint8_t 	count_records = 0;
 	uint8_t * data_area 		= new uint8_t[ (*BLOCK_SIZE ) ];
@@ -26,13 +25,13 @@ char iso_joliet(const uint32_t&lba = 0, const uint32_t&size = 0, const uint8_t&i
 		return 0;
 	}
 	fseek(iso_file, *BLOCK_SIZE * (pos), SEEK_SET);
-	fread( data_area, 1, *BLOCK_SIZE, iso_file);
+	fread(data_area, 1, *BLOCK_SIZE, iso_file);
 	
 	if ( pos == *addr_root || isDir == 1 ){
 		show_dir( data_area );
 	}else {
-		//read_file(); 
-		fprintf(stderr, "isDir => %u Esto es un archivo!", isDir );
+		read_file(data_area, (uint32_t&)size, fileName); 
+		// fprintf(stderr, "isDir => %u Esto es un archivo!", isDir );
 	}
 	//printf("iso size:  %d \n",(  data_area_len )* ISO_DESC_SIZE);
 	
@@ -54,7 +53,6 @@ char iso9660( const uint32_t&lba = 0,const uint32_t&size = 0,const uint8_t&isDir
  *	VOL_SPACE_SIZE: Tamaño del volumen en bloques de 2048 byte;
 /*/
 	uint32_t *vol_space_size 		= (uint32_t*) pvd_p->pvd_vol_space_size;
-	
 						dir_record_p 			= ( dir_record* )pvd_p->pvd_root_dir;
 	uint32_t*	addr_root					= (uint32_t*)dir_record_p->dr_LBA_extent;
 	
@@ -65,9 +63,9 @@ char iso9660( const uint32_t&lba = 0,const uint32_t&size = 0,const uint8_t&isDir
 	}
 	
 	uint8_t 	count_records = 0;
-	uint8_t * data_area 		= new uint8_t[ *BLOCK_SIZE *2];
+	uint8_t * data_area 		= new uint8_t[ *BLOCK_SIZE ];
 	if (data_area == NULL){
-		fprintf(stderr,"no memory\n");
+		fprintf(stderr,"ISO_9660: no memory\n");
 		delete[]typeIso;
 		return 0;
 	}
@@ -77,8 +75,8 @@ char iso9660( const uint32_t&lba = 0,const uint32_t&size = 0,const uint8_t&isDir
 	if ( pos == *addr_root || isDir == 1 ){
 		show_dir( data_area );
 	}else {
-		//read_file(); 
-		fprintf(stderr, "isDir => %u Esto es un archivo!", isDir );
+		// read_file(); 
+		fprintf(stderr, "ISO_9660: isDir => %u Esto es un archivo!", isDir );
 	}
 	//printf("iso size:  %d \n",(  data_area_len )* ISO_DESC_SIZE);
 	
@@ -94,13 +92,13 @@ char iso9660( const uint32_t&lba = 0,const uint32_t&size = 0,const uint8_t&isDir
 char show_dir(const uint8_t*  active_dir){
 	uint8_t 	count_records( 0 ), count_files( 0 ), count_dirs( 0 );	
 	uint32_t i( 68 );//Se inicializa en "68" para omitir lo 2 primeros directorio( carpeta ".","..")
-/*/
-* 	ACTIVE_DIR:		 es el directorio( carpeta ) el cual se esta evaluando.
-* 	I:						 representa el indice de cada registro en el directorio.
-* 	COUNT_RECORDS: es la cantidad de registros( archivos ) en el directorio( carpeta ).
-/*/
+	/*/
+	* 	ACTIVE_DIR:		 es el directorio( carpeta ) el cual se esta evaluando.
+	* 	I:						 representa el indice de cada registro en el directorio.
+	* 	COUNT_RECORDS: es la cantidad de registros( archivos ) en el directorio( carpeta ).
+	/*/
 	
-// ESTE "WHILE" SE UTILIZA PARA CONOCER LA CANTIDAD DE ARCHIVOS EN UN DIRECTORIO	
+	// ESTE "WHILE" SE UTILIZA PARA CONOCER LA CANTIDAD DE ARCHIVOS EN UN DIRECTORIO	
 	while( (dir_record_p = (dir_record*)&(active_dir [i] ))->dr_len_dir_record > 0 ){
 		i += dir_record_p->dr_len_dir_record;
 		count_records++;
@@ -116,7 +114,7 @@ char show_dir(const uint8_t*  active_dir){
 	}
 	
 	if (!count_records){
-		fprintf(stderr, "empty" );
+		fprintf(stderr, "SHOW_DIR: empty" );
 		return 0;
 	}
 	
@@ -130,7 +128,7 @@ char show_dir(const uint8_t*  active_dir){
 	uint8_t  *dirsName[count_dirs];			//	SIN USO
 	count_records = 0;
 	
-//	ESTE "WHILE" SE UTILIZA PARA RECORRER CADA DIRECTORIO Y CONOCER SUS ARCHIVOS Y PROPIEDADES
+	//	ESTE "WHILE" SE UTILIZA PARA RECORRER CADA DIRECTORIO Y CONOCER SUS ARCHIVOS Y PROPIEDADES
 	while( (dir_record_p = (dir_record*)&(active_dir [i] ))->dr_len_dir_record > 0 ){
 		i 				+= dir_record_p->dr_len_dir_record;
 	 	name_file = new uint8_t[ dir_record_p->dr_len_file_id ];
@@ -157,9 +155,9 @@ char show_dir(const uint8_t*  active_dir){
 		} 
 		count_records++;
 	} 
-//*************** END WHILE ****************//
+	//*************** END WHILE ****************//
 	
-//	SE UTILIZA PARA CREAR LA METADATA Y ENVIARLA JUNTO CON LOS DATOS
+	//	SE UTILIZA PARA CREAR LA METADATA Y ENVIARLA JUNTO CON LOS DATOS
 	createJson(filesName,lenIdFiles, lba, type_file, count_records);
 	for (uint8_t i = 0; i < count_records ; i++){
 		delete[] filesName[ i ];//	SE LIBERA EL ESPACIO ASIGNADO A CADA NOMBRE DE LOS ARCHIVOS
@@ -171,3 +169,13 @@ char show_dir(const uint8_t*  active_dir){
 /*/
  *	END OF SHOW DIR 
 /*/
+
+void read_file(uint8_t* data, uint32_t& size, const char* fileName="tmp_file"){
+	FILE*file = fopen(fileName,"wb");
+	if (file == NULL){
+		fprintf(stderr,"READ_FILE: file\n");
+		return;
+	}
+	fwrite(data, size, 1, file);
+	fclose(file);
+}
