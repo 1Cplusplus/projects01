@@ -1,7 +1,6 @@
 
 char iso_joliet(const uint32_t&lba = 0, const uint32_t&size = 0, const uint8_t&isDir = 0, const char* fileName="" ){
-	// printf("iso_joliet\n"); 
-	// printf("svd_addr_L_path_table %u\n", *(uint32_t*)svd_p->svd_addr_L_path_table );
+	printf("iso_joliet\n"); 
 
 	typeIso = new uint8_t[strlen("iso_joliet")];
 	strcpy( (char*)typeIso, "iso_joliet" );
@@ -14,13 +13,15 @@ char iso_joliet(const uint32_t&lba = 0, const uint32_t&size = 0, const uint8_t&i
 						dir_record_p   = ( dir_record* ) svd_p->svd_root_dir;
 	uint32_t*	addr_root			 = ( uint32_t*   ) dir_record_p->dr_LBA_extent;
 	
+	printf("svd_escape_sequences %s\n", svd_p->svd_escape_sequences);
 								pos = lba_parent = *addr_root;
 	if (lba != 0)	pos = lba_parent = lba;
 	 
 	uint8_t 	count_records = 0;
 	uint8_t * data_area 		= new uint8_t[ (*BLOCK_SIZE ) ];
+	
 	if (data_area == NULL){
-		fprintf(stderr,"no memory"); 
+		fprintf(stderr,"iso_joliet:no memory"); 
 		delete[]typeIso;  
 		return 0;
 	}
@@ -90,6 +91,7 @@ char iso9660( const uint32_t&lba = 0,const uint32_t&size = 0,const uint8_t&isDir
 /*/
 
 char show_dir(const uint8_t*  active_dir){
+	
 	uint8_t 	count_records( 0 ), count_files( 0 ), count_dirs( 0 );	
 	uint32_t i( 68 );//Se inicializa en "68" para omitir lo 2 primeros directorio( carpeta ".","..")
 	/*/
@@ -149,7 +151,7 @@ char show_dir(const uint8_t*  active_dir){
 				lenIdFiles[ count_records ] 	= dir_record_p->dr_len_file_id; 
 				lba[count_records]						= (uint32_t*)dir_record_p->dr_LBA_extent;
 				type_file[count_records]			= 0;
-				// printf("\n%d\n",dir_record_p->dr_file_unit_size );
+				// printf("\n data len %u\n",*(uint32_t*)dir_record_p->dr_data_len );
 				delete temp_p;
 			}  
 		} 
@@ -170,7 +172,7 @@ char show_dir(const uint8_t*  active_dir){
  *	END OF SHOW DIR 
 /*/
 
-void read_file(uint8_t* data, uint32_t& size, const char* fileName="tmp_file"){
+void read_file(uint8_t* data, uint32_t& size, const char* fileName="tmp_fil.txt"){
 	FILE*file = fopen(fileName,"wb");
 	if (file == NULL){
 		fprintf(stderr,"READ_FILE: file\n");
