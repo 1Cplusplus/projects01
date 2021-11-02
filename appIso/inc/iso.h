@@ -1,23 +1,28 @@
+#ifndef ISO_H
+#define ISO_H
+
 #include <cstdint>
 #include <cstdio>
 #include <string.h>
 #include <windows.h>
 
-#ifndef ISO_H
-#define ISO_H
+
+#define ISO_BLOCK_SIZE 					2048u
 
 #define ISO_DESC_BOOT 					0u
 #define ISO_DESC_PRIMARY 				1u
 #define ISO_DESC_SUPPLEMENTARY 	2u
 #define ISO_DESC_PARTITION 			3u
 #define ISO_DESC_TERMINATOR 		255u
-#define ISO_BLOCK_SIZE 					2048lu
 #define ISO_VOL_SYS_AREA_SIZE 	2048*16u
+
+//BOOT_CATALOG_SIZE_SI: ..._SI(SIGLE IMAGE)
+#define BOOT_CATALOG_SIZE_SI		64
 
 struct vol{
 	uint8_t vol_sys_area [16*2048];
 	uint8_t* vol_data_area[1];
-}*desc_file_;
+}*vol_p;
 
 struct dir_record{
 	uint8_t dr_len_dir_record;
@@ -40,12 +45,12 @@ struct path_table{
 	uint8_t pt_parent_dir_id[2];
 	uint8_t pt_dir_id[1];
 };
-struct fin_vol_desc{
-	uint8_t fvd_vdt;// Volume Descriptor Type
-	uint8_t fvd_stdId[5];
-	uint8_t	fvd_version;
-	uint8_t fvd_rsv[2041];
-}*fvd_p;
+struct terminator_vol_desc{
+	uint8_t tvd_vdt;// Volume Descriptor Type
+	uint8_t tvd_stdId[5];
+	uint8_t	tvd_version;
+	uint8_t tvd_rsv[2041];
+}*tvd_p;
 
 struct boot_vol_desc{
 		uint8_t bvd_vdt;// Volume Descriptor Type
@@ -68,7 +73,7 @@ struct primary_vol_desc{
 	uint8_t pvd_vol_space_size[8];// numeros de blockes logicos que ocupa el volumen
 	uint8_t pvd_unused_3[32];
 	uint8_t pvd_vol_set_size[4];
-	uint8_t pvd_vol_secu_number[4];
+	uint8_t pvd_vol_sequ_number[4];
 	uint8_t pvd_logical_block_size[4];
 	uint8_t pvd_path_table_size[8];
 	uint8_t pvd_addr_L_path_table[4];
@@ -137,8 +142,9 @@ struct attr_files{
 }; 
 
 uint8_t*typeIso; 
-uint8_t lba_parent=0;
-FILE*iso_file;  
+uint32_t lba_parent=0;
+FILE*iso_file; 
+
 
 
 void make_iso();
@@ -147,7 +153,7 @@ uint8_t iso_boot();
 char iso_joliet(const uint32_t&lba ,const uint32_t&size ,const uint8_t&isDir, uint8_t*  );   
 char show_dir(const uint8_t* );
 void read_file(uint8_t*, uint32_t&, const char* );
-uint8_t* load_descriptors( uint8_t&/*, uint8_t**/);
+uint8_t* load_descriptors( uint8_t&);
 
 	//	SE UTILIZA PARA CREAR LA METADATA Y ENVIARLA JUNTO CON LOS DATOS
 char createJson(uint8_t*filesName[], uint8_t*lenIdFiles, uint32_t *lba[],uint8_t*type_file, uint8_t&count_records){
